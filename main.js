@@ -8,16 +8,8 @@ const canvas = document.getElementById('canvas');
 const arrSmiley = [smiley1, smiley2, smiley3, smiley4, smiley5];
 arrSmiley.reverse();
 
-smiley1.addEventListener("click", checkingSmiley);
-
-smiley2.addEventListener("click", checkingSmiley);
-
-smiley3.addEventListener("click", checkingSmiley);
-
-smiley4.addEventListener("click", checkingSmiley);
-
-smiley5.addEventListener("click", checkingSmiley);
-
+// optimització del codi posant un sol addEventListener
+arrSmiley.forEach(elem => elem.addEventListener("click", checkingSmiley));
 
 // cada cop que es clica a un element, crida a la funció checkingSmiley. Aquesta funció primer elimina la class 'checked' de tots els elements de la array, després mira quin és l'element seleccionat i busca la coincidència a l'array. Un cop trobada, crea una nova array amb els elements que han de ser colorejats i afegeix la class 'checked' a la nova array.
 function checkingSmiley(element){
